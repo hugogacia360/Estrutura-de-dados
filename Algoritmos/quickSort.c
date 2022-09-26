@@ -7,11 +7,10 @@ int particiona(int *v, int inicio, int fim);
 {
 
     int v[10] = {5, 4, 3, 2, 1, 6, 7, 8, 9, 10};
-    int i;
 
     quicksort(v, 0, 9);
 
-    for (i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
         printf("%d ", v[i]);
     }
@@ -28,12 +27,12 @@ int particiona(int *v, int inicio, int fim) // recebe um vetor e o inicio e fim 
     while (esq < dir)
     {
         while (v[esq] <= pivo)
-            esq++; // percore o vetor da esquerda para a direita até encontrar um elemento maior que o pivo
+            esq++; // percore o vetor da esquerda para a direita enquanto o valor for menor que o pivo
         while (v[dir] > pivo)
-            dir--;     // percore o vetor da direita para a esquerda até encontrar um elemento menor que o pivo
+            dir--;     // percore o vetor da direita para a esquerda enquanto o valor for maior que o pivo
         if (esq < dir) // se o elemento da esquerda for menor que o da direira, troca os elementos de lugar
         {
-            aux = v[esq];
+            aux = v[esq];  //troca os valores apontados por esq e dir
             v[esq] = v[dir];
             v[dir] = aux;
         }
@@ -49,7 +48,7 @@ void quicksort(int *v, int inicio, int fim) // recebe como parametro o vetor e o
     if (fim > inicio)
     {
         pivo = particiona(v, inicio, fim);
-        quicksort(v, inicio, pivo - 1); // valores menor que o pivo são colocados antes do pivo
-        quicksort(v, pivo + 1, fim);    // valores menor que o pivo são colocados depois do pivo
+        quicksort(v, inicio, pivo - 1); // chama a função quicksort para a metade da esquerda
+        quicksort(v, pivo + 1, fim);    // chama novamente a função quicksort para ordenar os valores maiores que o pivo
     }
 }
