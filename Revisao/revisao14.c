@@ -16,7 +16,10 @@ int main() {
     ponto *p1 = criar_ponto(0, 0);
 
 /*    p->x = 5.1;
-    p->y = 6.2;
+    p->y = 6.2;void exibir_pto(ponto *p) {
+    if(p != NULL)
+        printf("(%.2f, %.2f)", p->x, p->y);
+}
 */
     exibir_pto(p);
     printf("\n");
