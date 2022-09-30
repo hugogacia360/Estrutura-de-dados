@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define pi 3.1415
 
 typedef struct Circle
@@ -9,37 +10,55 @@ typedef struct Circle
 
 } circle;
 
+void exibir_circle(circle c);
+float area_circulo(circle c, float radius);
+float perimeter(circle c);
+float distance(circle c1, circle c2);
+
 int main(void)
 {
+
+    circle circles[10];
+    int i;
+
+    for (i = 0; i < 10; i++)
+    {
+        circles[i].radius = 1 + rand() / (float)RAND_MAX * 4;
+        circles[i].x = rand() / (float)RAND_MAX * 10 - 5;
+        circles[i].y = rand() / (float)RAND_MAX * 10 - 5;
+    }
+
+    for (i = 0; i < 10; i++)
+    {
+        printf("\n\n----- Circulo %i -----\n\n", i + 1);
+        exibir_circle(circles[i]);
+        printf("\nArea: %.2f", area_circulo(circles[i], circles[i].radius));
+        printf("\nPerimetro: %.2f", perimeter(circles[i]));
+        printf("\nDistancia: %.2f", distance(circles[i], circles[i + 1]));
+
+    }
 
     return 0;
 }
 
-void exibir_circle(circle *c)
+void exibir_circle(circle c)
 {
-    if (c != NULL)
-    {
-        printf(" O centro do circulo e (%.2f, %.2f)", c->x, c->y);
-        printf("\nO radio do circulo e %.2f", c->radius)
-    }
-}
-float area_circulo(circle *c)
-{
-    if (c != NULL)
-    {
-        return pi * pow(c->radius, 2);
-    }
-}
-float perimeter(circle *c)
-{
-    return 2 * (pi * c->radius);
+
+    printf("Centro: (%.2f, %.2f)", c.x, c.y);
+    printf("\nRaio: %.2f", c.radius);
 }
 
-circle* criar_circulo(float x, float y) {
-    circle *c = (circle*) calloc(1, sizeof(struct Circle));
-    if(p != NULL) {
-        p->x = x;
-        p->y = y;
-    }
-    return p;
+float area_circulo(circle c, float radius)
+{
+    return pi * radius * radius;
+}
+
+float perimeter(circle c)
+{
+    return 2 * pi * c.radius;
+}
+
+float distance(circle c1, circle c2)
+{
+    return sqrt(pow(c1.x - c2.x, 2) + pow(c1.y - c2.y, 2));
 }
