@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define pi 3.1415
+#define pi 3.14
 
 typedef struct Circle
 {
@@ -10,8 +10,8 @@ typedef struct Circle
 
 } circle;
 
-void exibir_circle(circle c);
-float area_circulo(circle c, float radius);
+void show_circle(circle c);
+float area_circle(circle c, float radius);
 float perimeter(circle c);
 float distance(circle c1, circle c2);
 
@@ -31,8 +31,8 @@ int main(void)
     for (i = 0; i < 10; i++)
     {
         printf("\n\n----- Circulo %i -----\n\n", i + 1);
-        exibir_circle(circles[i]);
-        printf("\nArea: %.2f", area_circulo(circles[i], circles[i].radius));
+        show_circle(circles[i]);
+        printf("\nArea: %.2f", area_circle(circles[i], circles[i].radius));
         printf("\nPerimetro: %.2f", perimeter(circles[i]));
         printf("\nDistancia: %.2f", distance(circles[i], circles[i + 1]));
 
@@ -41,14 +41,14 @@ int main(void)
     return 0;
 }
 
-void exibir_circle(circle c)
+void show_circle(circle c)
 {
 
     printf("Centro: (%.2f, %.2f)", c.x, c.y);
     printf("\nRaio: %.2f", c.radius);
 }
 
-float area_circulo(circle c, float radius)
+float area_circle(circle c, float radius)
 {
     return pi * radius * radius;
 }
