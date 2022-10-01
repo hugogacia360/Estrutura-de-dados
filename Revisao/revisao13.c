@@ -7,7 +7,7 @@ int main() {
 
     // Alocação dinâmica de memória (criada com auxílio de funções específicas)
     int *b;
-    printf("Conteudo da area de memoria alocada dinamicamente: %d\n", *b);
+    printf("Conteudo da area de memoria alocada dinamicamente: %d\n", &b);
 
     b = (int*) malloc(sizeof(int));    // retorna o endereço da área de memória alocada
     if(b != NULL)
