@@ -4,7 +4,12 @@
 #include "function.h"
 
 
-typedef struct Circle circle;
+struct Circle
+{
+    float radius;
+    float x, y;
+
+};
 
 void show_circle(circle c)
 {

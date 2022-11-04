@@ -1,11 +1,6 @@
 #define pi 3.14
 
-typedef struct Circle
-{
-    float radius;
-    float x, y;
-
-} circle;
+typedef struct Circle circle;
 
 void show_circle(circle c);
 float area_circle(circle c, float radius);

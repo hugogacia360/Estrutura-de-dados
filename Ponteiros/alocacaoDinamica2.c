@@ -16,6 +16,7 @@ int main (void){
    strcpy(p1->nome , "Egzona");
 
     printf ("\n Peso : %d \nAltura = %d \nNome = %s", p1->peso, p1->altura, p1->nome);
+    printf ("\nO tamanho da struct e %d bytes", sizeof(pessoa));
 
     return 0;
 }
