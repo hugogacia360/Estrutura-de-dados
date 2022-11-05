@@ -5,17 +5,20 @@ Utilize o typedef e crie o nome “dados_aluno” para a estrutura. */
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct aluno{
+typedef struct aluno
+{
     char nome[50];
     char cpf[50];
     char endereco[50];
     int idade;
-}aluno;
+} aluno;
 
-int main(){
+int main()
+{
     aluno a1[10];
 
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++)
+    {
         printf("Digite o nome do aluno\n");
         fgets(a1[i].nome, 50, stdin);
         printf("Digite o cpf do aluno\n");

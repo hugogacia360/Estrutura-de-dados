@@ -2,13 +2,15 @@
 ponto no plano (x e y). Depois, declare e leia do teclado dois pontos e exiba a distância entre
 eles. Utilize o typedef para criar um novo nome para a estrutura */
 
-#include<stdio.h>
+#include <stdio.h>
 
-    typedef struct plano {
-        int x,y;
-    }plano;
+typedef struct plano
+{
+    int x, y;
+} plano;
 
-int main (){
+int main()
+{
 
     plano p1;
 
@@ -19,7 +21,6 @@ int main (){
 
     float distancia = sqrt(pow(p1.x, 2) + pow(p1.y, 2));
     printf("A distancia entre os pontos e %f", distancia);
-
 
     return 0;
 }

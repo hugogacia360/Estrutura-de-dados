@@ -3,12 +3,13 @@
 
 #include <stdio.h>
 
-typedef struct string{
+typedef struct string
+{
     char str[1000];
-}string;
+} string;
 
-
-int main (){
+int main()
+{
     char string[1000];
     printf("Digite uma string\n");
     fgets(string, 1000, stdin);
